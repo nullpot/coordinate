@@ -14,7 +14,9 @@ class TwitterController extends AppController
 
 	public $components = array(//		'Common',
 	);
-	public $uses = array();
+	public $uses = array(
+		'Show'
+	);
 
 
 	public function get_image()
@@ -33,10 +35,39 @@ class TwitterController extends AppController
 		foreach ($tweet->statuses as $tw) {
 			$id_str = $tw->id_str;
 
-			if (!empty($tw->entities->media[0])) {
-				$media_url = $tw->entities->media[0]->media_url;
-				debug($media_url);
+
+			$options = array(
+				'fields' => array(),
+				'conditions' => array(
+					'twitter_id' => $id_str
+				)
+			);
+
+			$result = $this->Show->find('first', $options);
+			if (empty($result)) {
+// 登録画像がなければ
+
+				if (!empty($tw->entities->media[0])) {
+					// そのツイートに画像があれば
+					$media_url = $tw->entities->media[0]->media_url;
+
+					$data = array('Show' => array(
+						'twitter_id' => $id_str,
+						'media_url' => $media_url,
+						));
+					$fields = array(
+						'twitter_id',
+						'media_url',
+					);
+					$this->Show->save($data, false, $fields);
+					$this->Show->create();
+
+
+				}
+
 			}
+
+
 
 
 		}
