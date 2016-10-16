@@ -15,6 +15,9 @@ class ShowController extends AppController {
 //		'Common',
 	);
 	public $uses = array(
+		'Show',
+		'Like',
+		'Tag',
 	);
 
 
@@ -33,10 +36,24 @@ class ShowController extends AppController {
 		);
 
 		$results = $this->Show->find('all', $options);
+
 		foreach($results as $result){
+//			debug($result);
+
+			$show_id=$result['Show']['id'];
+			$options = array(
+				'fields' => array(),
+				'conditions' => array(
+					'show_id'=>$show_id,
+				)
+			);
+			$like_count = $this->Like->find('first', $options);
+
+
 			$array[]=array(
 				'twitter_id'=>$result['Show']['twitter_id'],
 				'media_url'=>$result['Show']['media_url'],
+				'like_count'=>$like_count['Like']['count'],
 				);
 
 		}
