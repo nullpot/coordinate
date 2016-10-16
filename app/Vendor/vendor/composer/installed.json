@@ -1,29 +1,29 @@
 [
     {
         "name": "abraham/twitteroauth",
-        "version": "0.5.0",
-        "version_normalized": "0.5.0.0",
+        "version": "0.6.6",
+        "version_normalized": "0.6.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/abraham/twitteroauth.git",
-            "reference": "875918bad4f1e9651635ee3107f5edcce34b4acd"
+            "reference": "fc0766220c79087ac8178625d34e88ca29160d5b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/875918bad4f1e9651635ee3107f5edcce34b4acd",
-            "reference": "875918bad4f1e9651635ee3107f5edcce34b4acd",
+            "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/fc0766220c79087ac8178625d34e88ca29160d5b",
+            "reference": "fc0766220c79087ac8178625d34e88ca29160d5b",
             "shasum": ""
         },
         "require": {
             "ext-curl": "*",
-            "php": ">=5.4.0"
+            "php": ">=5.5.0"
         },
         "require-dev": {
-            "phpmd/phpmd": "2.*",
-            "phpunit/phpunit": "4.*",
-            "squizlabs/php_codesniffer": "2.*"
+            "phpmd/phpmd": "2.3.*",
+            "phpunit/phpunit": "4.8.*",
+            "squizlabs/php_codesniffer": "2.3.*"
         },
-        "time": "2015-01-22 21:47:15",
+        "time": "2016-10-10 14:20:30",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -46,6 +46,8 @@
         "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
         "homepage": "https://twitteroauth.com",
         "keywords": [
+            "Twitter API",
+            "Twitter oAuth",
             "api",
             "oauth",
             "rest",

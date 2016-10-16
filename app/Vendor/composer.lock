@@ -4,31 +4,31 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f7a5c138d029d3e79386d931ce575edc",
-    "content-hash": "d12c93172d24cc82e41c2635492b4ac7",
+    "hash": "e2d1dff7dd3b8f6795c34bf21bb2d403",
+    "content-hash": "70cab0339118fdc8b66a204da6301f9f",
     "packages": [
         {
             "name": "abraham/twitteroauth",
-            "version": "0.5.0",
+            "version": "0.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/abraham/twitteroauth.git",
-                "reference": "875918bad4f1e9651635ee3107f5edcce34b4acd"
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/875918bad4f1e9651635ee3107f5edcce34b4acd",
-                "reference": "875918bad4f1e9651635ee3107f5edcce34b4acd",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/fc0766220c79087ac8178625d34e88ca29160d5b",
+                "reference": "fc0766220c79087ac8178625d34e88ca29160d5b",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.4.0"
+                "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpmd/phpmd": "2.*",
-                "phpunit/phpunit": "4.*",
-                "squizlabs/php_codesniffer": "2.*"
+                "phpmd/phpmd": "2.3.*",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.3.*"
             },
             "type": "library",
             "autoload": {
@@ -51,13 +51,15 @@
             "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
             "homepage": "https://twitteroauth.com",
             "keywords": [
+                "Twitter API",
+                "Twitter oAuth",
                 "api",
                 "oauth",
                 "rest",
                 "social",
                 "twitter"
             ],
-            "time": "2015-01-22 21:47:15"
+            "time": "2016-10-10 14:20:30"
         }
     ],
     "packages-dev": [],
