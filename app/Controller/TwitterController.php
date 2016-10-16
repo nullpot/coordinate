@@ -15,7 +15,9 @@ class TwitterController extends AppController
 	public $components = array(//		'Common',
 	);
 	public $uses = array(
-		'Show'
+		'Show',
+		'Like',
+		'Tag',
 	);
 
 
@@ -30,7 +32,7 @@ class TwitterController extends AppController
 		$consumer_secret = Configure::read('api.twitter.consumer_secret');
 		$connection = new TwitterOAuth($consumer_key, $consumer_secret);
 		$tweet = $connection->get("search/tweets", array("q" => "#今日のコーデ",
-														 'count' => 10));
+														 'count' => 100));
 
 		foreach ($tweet->statuses as $tw) {
 			$id_str = $tw->id_str;
@@ -64,16 +66,18 @@ class TwitterController extends AppController
 
 					$latest_id=$this->Show->getLastInsertID();
 
-					$data = array('Show' => array(
+
+
+
+					$like_data = array('Like' => array(
 						'show_id' => $latest_id,
 					));
-					$fields = array(
+					$like_fields = array(
 						'show_id',
 					);
-					$this->Like->save($data, false, $fields);
+
+					$this->Like->save($like_data , false, $like_fields);
 					$this->Like->create();
-
-
 
 				}
 
