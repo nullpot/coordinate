@@ -95,6 +95,10 @@ Configure::write('Dispatcher.filters', array(
 	'CacheDispatcher'
 ));
 
+
+// 環境設定ファイルの読み込み
+Configure::load('env');
+
 /**
  * Configures default file logging options
  */
