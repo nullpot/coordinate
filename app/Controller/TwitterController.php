@@ -62,6 +62,18 @@ class TwitterController extends AppController
 					$this->Show->save($data, false, $fields);
 					$this->Show->create();
 
+					$latest_id=$this->Show->getLastInsertID();
+
+					$data = array('Show' => array(
+						'show_id' => $latest_id,
+					));
+					$fields = array(
+						'show_id',
+					);
+					$this->Like->save($data, false, $fields);
+					$this->Like->create();
+
+
 
 				}
 
